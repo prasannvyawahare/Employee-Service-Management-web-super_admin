@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* surfaces */
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f7f7f9;
+  --color-surface-raised: #ffffff;
+  --color-border: #e5e5ea;
+  --color-border-strong: #d4d4d9;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* ink */
+  --color-ink: #18181b;
+  --color-ink-muted: #6b6b74;
+  --color-ink-faint: #9b9ba3;
+
+  /* accent — violet, used for primary actions/active nav/focus rings */
+  --color-accent: #6d5ae6;
+  --color-accent-hover: #5c4bd1;
+  --color-accent-soft: #f1eefb;
+  --color-accent-ink: #ffffff;
+
+  /* semantic status */
+  --color-good: #16803c;
+  --color-good-soft: #e9f7ee;
+  --color-warn: #b45309;
+  --color-warn-soft: #fdf3e2;
+  --color-bad: #b91c1c;
+  --color-bad-soft: #fdecec;
+  --color-neutral: #52525b;
+  --color-neutral-soft: #f1f1f3;
+
+  --radius-card: 0.875rem;
+  --radius-control: 0.5rem;
+
+  --shadow-card: 0 1px 2px rgba(24, 24, 27, 0.04), 0 6px 20px -8px rgba(24, 24, 27, 0.1);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--color-surface-sunken);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+dialog::backdrop {
+  background: rgba(24, 24, 27, 0.45);
 }
